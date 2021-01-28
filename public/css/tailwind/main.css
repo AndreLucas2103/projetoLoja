@@ -1,0 +1,12 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+/*
+buildar css conforme eu quiser, já enviando para os caminhos corretos
+npx tailwindcss-cli@latest build ./public/css/tailwind/main.css -o ./public/css/tailwind/style-tailwind.css
+*/

@@ -1,0 +1,15 @@
+{
+    "configuracaoSistema": {
+        "nodemailer": {
+            "smptNodemailer": "gmail",
+            "emailNodemailer": "123@mail.com",
+            "senhaEmailNodemailer": "1233"
+        }
+    },
+    "dadosLoja":{
+        "nomeLoja": "Teste Loja P4",
+        "emailLoja": "lojatestep4@mail.com",
+        "enderecoLoja": "Rua areado 520, Alterosa | 37145-000 MG",
+        "telefoneLoja": "(35) 99988-1600 "
+    }
+}

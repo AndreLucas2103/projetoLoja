@@ -1,0 +1,119 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<title>Registro | Loja</title>
+    <div class="w-full flex flex-wrap">
+
+        <div class="w-1/2 shadow-2xl">
+            <img class="object-cover w-full h-screen hidden md:block" src="/img/logo-loja/login-registro/logo-login-registo.jpg">
+        </div>
+
+        <!-- Register Section -->
+        <div class="w-full md:w-1/2 flex flex-col">
+            <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+                <p class="text-center text-3xl pt-4">Continuar cadastro</p>
+                <form class="flex flex-col pt-3 md:pt-1" id="form-concluirRegistro" action="/cadastroRealizado" method="POST">
+                    <div class="flex flex-wrap -mx-2 mt-5 space-y-4 md:space-y-0">
+                        <div class="w-full px-2 md:w-1/2">
+                            <label for="celularContato" class="text-lg">Celular contato</label>
+                            <input required type="text" name="celularContato" id="celularContato" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="w-full px-2 md:w-1/2">
+                            <label for="dataNascimento" class="text-lg">Data nascimento</label>
+                            <input required type="date" name="dataNascimento" id="dataNascimento"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-2 mt-5 space-y-4 md:space-y-0">
+                        <div class="w-full px-2 md:w-1/2">
+                            <label for="cep" class="text-lg">CEP</label>
+                            <input required type="text" name="cep" id="cep" id="email"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="w-full px-2 md:w-1/2">
+                            <label for="cidade" class="text-lg">Cidade</label>
+                            <input required type="text" name="cidade" id="cidade"  autocomplete="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col pt-4">
+                        <label for="rua" class="text-lg">Rua</label>
+                        <input required type="text" name="rua" id="rua" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+
+                    <div class="flex flex-wrap -mx-2 mt-5 space-y-4 md:space-y-0">
+                        <div class="w-full px-2 md:w-1/2">
+                            <label for="numero" class="text-lg">Número</label>
+                            <input required type="text" name="numero" id="numero" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="w-full px-2 md:w-1/2">
+                           <label class="block mb-1 " for="uf">UF</label>
+                            <select required name="uf" id="uf" class="form-select shadow border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                                <option hidden></option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espirito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-2 mt-5 space-y-4 md:space-y-0">
+                        <div class="w-full px-2 md:w-1/2">
+                            <label class="block mb-1" for="bairro">Bairro</label>
+                          <input required name="bairro" type="text" id="bairro" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" type="text" id="formGridCode_month"/>
+                        </div>
+                        <div class="w-full px-2 md:w-1/2">
+                           <label class="block mb-1" for="complemento">Complemento</label>
+                          <input required name="complemento" type="text" id="complemento" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" type="text" id="formGridCode_year"/>
+                        </div>
+                    </div>
+
+
+                    <label class="text-gray-700 mt-8">
+                        <input type="checkbox" name="receberNewsletter" value="true"/>
+                        <span class="ml-1">Receber notificações de atualizações e promoções</a> </span>
+                    </label>
+
+                    <label class="text-gray-700 mt-2">
+                        <input type="checkbox" name="termosDeUso" id="termosDeUso" value="true" required>
+                        <span class="ml-1">Concordo com os <a href="/termos-de-uso-e-privacidade" class="text-red-700">termos de uso e privacidade!</a> </span>
+                    </label>
+                    
+                    <input type="submit" value="Concluir" class="bg-red-500 text-white font-bold text-lg hover:bg-red-700 p-2 mt-4">
+                </form>
+                <div class="text-center pt-6 pb-6">
+                    <p>Já tem uma conta? <a href="login.html" class="underline font-semibold">Entre aqui.</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        
+    </div>
+
+
+<script>
+    $('#cep').mask('00000-000')
+</script>

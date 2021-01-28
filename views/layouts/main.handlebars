@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/logo-loja/favicon/animated_favicon.ico"/>
+    
+    <link rel="stylesheet" href="/css/tailwind/style-tailwind.css">
+    <title>{{dadosLoja.nomeLoja}}</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/bb19a1d7d1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+</head>
+<body>
+    <div>
+        {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+        {{else}}
+
+        {{/if}}
+
+         {{>_msg}}
+        {{{body}}}
+    </div>
+</body>
+</html>
