@@ -1,0 +1,106 @@
+
+<div class="bg-center bg-no-repeat bg-cover"
+    style="background-image:url(/img/loja/fundo/fundo-rodape.jpg)">
+    <div class="container py-16 sm:py-20 md:py-24">
+        <div class="w-5/6 mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <div class="text-center lg:text-left">
+                <h4 class="font-hk font-bold text-white text-xl pb-8">Contact</h4>
+                <ul class="list-reset">
+                    
+                    <li class="pb-2 block">
+                        <a 
+                        class="font-hk text-white transition-colors hover:text-primary text-base tracking-wide">{{dadosLoja.emailLoja}}</a>
+                    </li>
+                    
+                    <li class="pb-2 block">
+                        <a 
+                        class="font-hk text-white transition-colors hover:text-primary text-base tracking-wide">{{dadosLoja.telefoneLoja}}</a>
+                    </li>
+                    
+                    <li class="pb-2 block">
+                        <a 
+                        class="font-hk text-white transition-colors hover:text-primary tracking-wide text-sm">{{dadosLoja.enderecoLoja}}</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="text-center py-16 lg:py-0">
+
+                <a href="/"
+                class="font-butler text-white text-4xl uppercase tracking-wider">{{dadosLoja.nomeLoja}}.</a>
+                <div class="flex items-center justify-center pt-5">
+                    
+                    {{#if dadosLoja.linkFacebook}}
+                    <a href="https://www.google.com"
+                    class="group">
+                        <div class="bg-white group-hover:bg-primary rounded-full px-2 py-2 flex items-center mr-5 transition-colors">
+                            <i class="bx bxl-facebook text-secondary transition-colors group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    {{/if}}
+                    
+                    {{#if dadosLoja.linkTwitter}}
+                    <a href="https://www.google.com"
+                    class="group">
+                        <div class="bg-white group-hover:bg-primary rounded-full px-2 py-2 flex items-center mr-5 transition-colors">
+                            <i class="bx bxl-twitter text-secondary transition-colors group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    {{/if}}
+
+                    {{#if dadosLoja.linkInstagram}}
+                    <a href="https://www.google.com"
+                    class="group">
+                        <div class="bg-white group-hover:bg-primary rounded-full px-2 py-2 flex items-center mr-5 transition-colors">
+                            <i class="bx bxl-instagram text-secondary transition-colors group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    {{/if}}
+
+                    {{#if dadosLoja.linkPinterest}}
+                    <a href="https://www.google.com"
+                    class="group">
+                        <div class="bg-white group-hover:bg-primary rounded-full px-2 py-2 flex items-center mr-5 transition-colors">
+                            <i class="bx bxl-pinterest text-secondary transition-colors group-hover:text-white"></i>
+                        </div>
+                    </a>
+                    {{/if}}
+                    
+                </div>
+            </div>
+            <div class="text-center lg:text-left">
+                <h4 class="font-hk font-bold text-white text-xl pb-8">Links</h4>
+                <ul class="list-reset">
+                    
+                    <li class="pb-2 block">
+                        <a href="/loja"
+                        class="font-hk transition-colors text-white hover:text-primary text-base tracking-wide">Comprar</a>
+                    </li>
+                    
+                    <li class="pb-2 block">
+                        <a href="/contato"
+                        class="font-hk transition-colors text-white hover:text-primary text-base tracking-wide">Contate-Nos</a>
+                    </li>
+                    
+                    <li class="pb-2 block">
+                        <a href="/termos-condicoes"
+                        class="font-hk transition-colors text-white hover:text-primary text-base tracking-wide">Termos & Condições</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/glide.min.js" integrity="sha256-CnNQJd80jPuIDyeQRRq7+Wgt+++Kl0dZLt4ETNmxMIw=" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css" integrity="sha256-Ev8y2mML/gGa4LFVZgNpMTjKwj34q4pC4DcseWeRb9w=" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css" integrity="sha256-sw/JiPOV1ZfcXjqBJT1vqaA4vBGeiqn+b7PDhVv4OA4=" crossorigin="anonymous"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
+
+    <script src='/js/loja-js/custom-loja/htmljs.js'></script>

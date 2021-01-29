@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel = "shortcut icon" type = "imagem/x-icon" href = "/img/logo-loja/favicon/animated_favicon.ico"/>
-    
+    <meta name="viewport" content="width=device-width">
+
     <link rel="stylesheet" href="/css/tailwind/style-tailwind.css">
     <title>{{dadosLoja.nomeLoja}}</title>
 
@@ -15,12 +16,26 @@
 <body>
     <div>
         {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-        {{else}}
-
+            <script>
+                $(document).ready(()=>{    
+                    Swal.fire({
+                        toast: true,
+                        title: '{{error}}',
+                        position: 'bottom-right',
+                        background: "#8a0000",
+                        showConfirmButton: false,
+                        showCloseButton: true,
+                        timer: 5000,
+                        timerProgressBar: true,
+                        customClass: {
+                            title: 'font-title-notificacao',                              
+                        }
+                    })
+                })
+            </script>
         {{/if}}
 
-         {{>_msg}}
+        {{>_msg}}
         {{{body}}}
     </div>
 </body>
