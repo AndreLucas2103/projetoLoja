@@ -255,7 +255,7 @@ let htmlConfirmacao = `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:s
             pass: configSistema.nodemailer.senhaEmailNodemailer
         }
     });
-   
+    
     var mailOptions = {
         from: configSistema.nodemailer.emailNodemailer,
         to: emailDestinatario,

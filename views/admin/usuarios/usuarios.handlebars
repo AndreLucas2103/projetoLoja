@@ -1,0 +1,52 @@
+{{>admin/_admin-link}}
+<div id="wrapper">
+{{>admin/_admin-menu}}
+<div id="content-wrapper" class="d-flex flex-column">
+{{>admin/_admin-topbar}}
+
+<div class="container-fluid">
+
+    <div class="table-responsive" >
+        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>CPF</th>
+                    <th>Data Nascimento</th>
+                    <th>Celular Contato</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>UF</th>
+                    <th>Status Ativo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each usuarios}}
+                <tr>
+                    <td>{{_id}}</td>
+                    <td>{{primeiroNome}} {{segundoNome}}</td>
+                    <td>{{email}}</td>
+                    <td>{{cpf}}</td>
+                    <td>{{dataNascimento}}</td>
+                    <td>{{celularContato}}</td>
+                    <td>{{cep}}</td>
+                    <td>{{cidade}}</td>
+                    <td>{{uf}}</td>
+                    <td>{{statusAtivo}}</td>
+                    <td><a href="/usuario/{{_id}}"><i class="fas fa-address-card" style="color: black;"></i></a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</div>
+</div>
+{{>admin/_admin-js}}
+
+

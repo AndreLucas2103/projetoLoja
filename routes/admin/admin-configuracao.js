@@ -15,7 +15,6 @@ router.post('/arquivo-configuracao', (req, res) => {
 
     req.flash("success_msg", "Dados alterado com sucesso!")
     res.redirect('back')
-   
 })
 
 

@@ -25,6 +25,7 @@ const {eAdmin} = require("./helpers/eAdmin");
     // Rotas para administracao
         const admin = require("./routes/admin/admin")
         const adminConfiguracao = require("./routes/admin/admin-configuracao")
+        const adminUsuario = require("./routes/admin/admin-usuario")
 
 /*----------------------------------------------------------------------------------------*/
 // Configuração
@@ -122,6 +123,7 @@ const mongoose = require("mongoose")
     //Rotas para administracao adminConfiguracao
         app.use('/admin', admin)
         app.use('/admin', adminConfiguracao)
+        app.use('/admin', adminUsuario)
 
 
 /*----------------------------------------------------------------------------------------*/
