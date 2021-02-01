@@ -1,83 +1,55 @@
 
 
-<!-- 
-<div class="w-full flex flex-wrap">
-    <div class="w-full md:w-1/2 flex flex-col">
-
-        <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-            <p class="text-center text-3xl">Bem vindo!</p>
-            <form class="flex flex-col pt-3 md:pt-8" action="/login" method="post">
-                <div class="flex flex-col pt-4">
-                    <label for="email" class="text-lg">Email</label>
-                    <input type="email" name="email" id="email" placeholder="seuemail@mail.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-
-                <div class="flex flex-col pt-4">
-                    <label for="password" class="text-lg">Senha</label>
-                    <input type="password" name="senha" id="password" placeholder="Senha" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-
-                <input type="submit" value="Log In" class="bg-red-500 text-white font-bold text-lg hover:bg-red-700 p-2 mt-8">
-            </form>
-            <div class="text-center pt-12 pb-12">
-                <p>Não possui conta? <a href="/registro" class="underline font-semibold">Registre agora.</a></p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="w-1/2 shadow-2xl">
-        <img class="object-cover w-full h-screen hidden md:block" src="/img/logo-loja/login-registro/logo-login-registo.jpg">
-    </div>
-</div>
--->
-
 {{>_msg}}
 
-<div class="lg:flex">
-    <div class="lg:w-1/2 xl:max-w-screen-sm">
-        <div class="mt-12 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
-            <h2 class="text-center text-4xl text-red-900 font-display font-semibold lg:text-left xl:text-5xl
-            xl:text-bold uppercase ">{{dadosLoja.nomeLoja}}</h2>
-            <p class="text-center text-red-900 font-display font-semibold lg:text-left text-3xl	mt-4">Entrar</p>
-            <div class="mt-12">
-                <form action="/login" method="post">
-                    <div>
-                        <div class="text-sm font-bold text-gray-700 tracking-wide">Enderço de email</div>
-                        <input type="text" name="email" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mike@gmail.com">
-                    </div>
-                    <div class="mt-8">
-                        <div class="flex justify-between items-center">
-                            <div class="text-sm font-bold text-gray-700 tracking-wide">
-                                Senha
-                            </div>
-                            <div>
-                                <a class="text-xs font-display font-semibold text-indigo-600 hover:text-indigo-800
-                                cursor-pointer">
-                                    Esqueceu a senha?
-                                </a>
+{{>_loja-link}}
+
+{{>_loja-menu}}
+
+<div id="page-content">
+    <!--Page Title-->
+    <div class="page section-header text-center">
+        <div class="page-title">
+            <div class="wrapper"><h1 class="page-width">Entrar</h1></div>
+        </div>
+    </div>
+    <!--End Page Title-->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+                <div class="mb-4">
+                    <form  action="/login" method="post" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">	
+                        <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" placeholder="" id="email" class="" autocorrect="off" autocapitalize="off" autofocus="">
                             </div>
                         </div>
-                        <input type="password" name="senha" class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="">
-                    </div>
-                    <div class="mt-10">
-                        <button class="bg-red-500 text-gray-100 p-4 w-full rounded-full tracking-wide
-                        font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-red-700
-                        shadow-lg">
-                            Entrar
-                        </button>
-                    </div>
-                </form>
-                <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
-                    Não possui conta ? <a href="/registro" class="cursor-pointer text-indigo-600 hover:text-indigo-800">Registrar-se</a>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="CustomerPassword">Password</label>
+                                <input type="password"  name="senha" placeholder="" id="CustomerPassword" class="">                        	
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                            <input type="submit" class="btn mb-3" value="Entrar">
+                            <p class="mb-4">
+                                <a href="#" id="RecoverPassword">Esqueceu a senha?</a> &nbsp; | &nbsp;
+                                <a href="/registro" id="customer_register_link">Criar conta</a>
+                            </p>
+                        </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hidden lg:flex items-center justify-center bg-white flex-1 h-screen">
-        <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
-            <img src="/img/logo-loja/login-registro/logo-login-registo.jpg" alt="">
-        </div>
-    </div>
 </div>
 
+{{>_loja-rodape}}
+
+{{>_loja-js}}

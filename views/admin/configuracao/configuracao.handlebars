@@ -3,26 +3,47 @@
 {{>admin/_admin-menu}}
 <div id="content-wrapper" class="d-flex flex-column">
 {{>admin/_admin-topbar}}
+{{>_msg}}
 
-{{configuracoes}}
-<div class="container-fluid">
+<div class="container-fluid mb-4">
 
-    <form>
-        
+    <div class="alert alert-warning" role="alert">
+        <h6 class="alert-heading">Recarregue a página uma vez caso os dados não apareça! - Por padrão o sistema será reiniciado para aplicar as alterações</h6>
+    </div>
+
+    <form action="/admin//arquivo-configuracao" method="POST">
+
         <div class="card">
+            <div class="card-body">
+                <label for="msgTopo">Mensagem no topo da página</label>
+                <input type="text" class="form-control form-control-sm" name="msgTopo" id="msgTopo" value="{{dadosLoja.msgTopo}}">
+            </div>
+        </div>
+        
+        <div class="card mt-4">
             <div class="card-body">
                 <div>
                     <h6>Nodamailer</h6>
                     <span style="font-size: small;">Informações da conta do Google Gmail onde será enviados os e-mails por ela</span>
                 </div>
                 <div class="form-row mt-4">
-                    <div class="form-group col-md-6">
-                    <label for="emailNodemailer">Email Nodemailer</label>
-                    <input type="email" class="form-control form-control-sm" name="emailNodemailer" id="emailNodemailer" placeholder="Email">
+                    <div class="form-group col-md-4">
+                        <label for="emailNodemailer">Email Nodemailer</label>
+                        <input type="email" class="form-control form-control-sm" name="emailNodemailer" id="emailNodemailer"  value="{{configuracao.configuracaoSistema.nodemailer.emailNodemailer}}">
                     </div>
-                    <div class="form-group col-md-6">
-                    <label for="senhaEmailNodemailer">Senha Nodemailer</label>
-                    <input type="password" class="form-control form-control-sm" name="senhaEmailNodemailer" id="senhaEmailNodemailer" placeholder="Senha">
+                    <div class="form-group col-md-2">
+                        <label for="senhaEmailNodemailer">Senha Nodemailer</label>
+                        <input type="password" class="form-control form-control-sm" name="senhaEmailNodemailer" id="senhaEmailNodemailer" value="{{configuracao.configuracaoSistema.nodemailer.senhaEmailNodemailer}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="smptNodemailer">SMPT</label>
+                        <select class="form-control form-control-sm" name="smptNodemailer">
+                            <option value="gmail" selected>Gmail</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="urlSite">URL do site</label>
+                        <input type="text" class="form-control form-control-sm" name="urlSite" id="urlSite" value="{{configuracao.configuracaoSistema.nodemailer.urlSite}}">
                     </div>
                 </div>
             </div>
@@ -35,19 +56,59 @@
                     <span style="font-size: small;">Informações da loja que aparecerá para o usuário</span>
                 </div>
                 <div class="form-row mt-4">
-                    <div class="form-group col-md-6">
-                    <label for="emailNodemailer">Email Nodemailer</label>
-                    <input type="email" class="form-control form-control-sm" name="emailNodemailer" id="emailNodemailer" placeholder="Email">
+                    <div class="form-group col-md-4">
+                        <label for="nomeLoja">Nome Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="nomeLoja" id="nomeLoja" value="{{configuracao.dadosLoja.nomeLoja}}">
                     </div>
-                    <div class="form-group col-md-6">
-                    <label for="senhaEmailNodemailer">Senha Nodemailer</label>
-                    <input type="password" class="form-control form-control-sm" name="senhaEmailNodemailer" id="senhaEmailNodemailer" placeholder="Senha">
+                    <div class="form-group col-md-4">
+                        <label for="emailLoja">Email Loja</label>
+                        <input type="email" class="form-control form-control-sm" name="emailLoja" id="emailLoja" value="{{configuracao.dadosLoja.emailLoja}}">
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="telefoneLoja">Telefone Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="telefoneLoja" id="telefoneLoja" value="{{configuracao.dadosLoja.telefoneLoja}}">
+                    </div>
+                </div>
+                <div class="">
+                    <label for="enderecoLoja">Endereço Loja</label>
+                    <input type="text" class="form-control form-control-sm" name="enderecoLoja" id="enderecoLoja" value="{{configuracao.dadosLoja.enderecoLoja}}">
                 </div>
             </div>
         </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <div>
+                    <h6>Redes Sociais da loja</h6>
+                    <span style="font-size: small;">Informações da loja que aparecerá para o usuário</span>
+                </div>
+                <div class="form-row mt-4">
+                    <div class="form-group col-md-2">
+                        <label for="facebookLoja">Facebook Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="facebookLoja" id="facebookLoja" value="{{configuracao.dadosLoja.facebookLoja}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="twitterLoja">Twitter Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="twitterLoja" id="twitterLoja" value="{{configuracao.dadosLoja.twitterLoja}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="pinterestLoja">Pinterest Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="pinterestLoja" id="pinterestLoja" value="{{configuracao.dadosLoja.pinterestLoja}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="instagramLoja">Intagram Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="instagramLoja" id="instagramLoja" value="{{configuracao.dadosLoja.instagramLoja}}">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="youtubeLoja">YouTube Loja</label>
+                        <input type="text" class="form-control form-control-sm" name="youtubeLoja" id="youtubeLoja" value="{{configuracao.dadosLoja.youtubeLoja}}">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
         
-        <button type="submit" class="btn btn-primary btn-sm mt-4">Salvar</button>
+        <button type="submit" class="btn btn-primary btn-sm mt-4 w-25">Salvar</button>
     </form>
 
 </div>

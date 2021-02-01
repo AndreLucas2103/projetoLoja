@@ -14,12 +14,24 @@ router.get("/registro", (req, res) => {
     res.render("usuarios/registro")
 })
 
-router.post('/verificarEmailExiste', async (req, res)=>{
-    Usuario.findOne({email: req.body.email}).lean().then((usuario) => {
+/* ERROS
+    420: cpf já cadastrado na base de dados
+    421: email já cadastrado na base de dados
+
+*/
+router.post('/verificarExisteRegistro', async (req, res)=>{
+    Usuario.findOne({cpf: req.body.cpf}).lean().then((usuario) => {
         if(usuario){
-            res.json(400)
+            res.json(420)
         }else{
-            res.json(200)
+            console.log(req.body.email)
+            Usuario.findOne({email: req.body.email}).lean().then(usuario => {
+                if(usuario){
+                    res.json(421)
+                }else{
+                    res.json(200)
+                }
+            })
         }
     }).catch((err) => {
         console.log(err)
@@ -43,7 +55,8 @@ router.post("/registrar",  (req, res) => {
                     segundoNome: segundoNome,
                     email: email,
                     senha: senha,
-                    cpf: cpf
+                    cpf: cpf,
+                    emailConfirmado: false
                 })
             
                 bcryptjs.genSalt(10, (erro, salt) => {
@@ -55,6 +68,7 @@ router.post("/registrar",  (req, res) => {
                         novoUsuario.senha = hash
             
                         novoUsuario.save().then((usuario) => {
+                            nodemailer.enviarConfirmacaoEmail(usuario)
                             res.json(200)
                         }).catch((err) => {
                             console.log(err)
@@ -69,10 +83,6 @@ router.post("/registrar",  (req, res) => {
         })
 })
 
-
-router.post('/enviarEmailConfirmacao', (req, res) => {
-    nodemailer.enviarConfirmacaoEmail(req.body.number, req.body.email, req.body.primeiroNome, req.body.segundoNome)
-})
 
 router.get("/login", (req, res) => {
     res.render("usuarios/login")

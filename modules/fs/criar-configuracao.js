@@ -8,14 +8,21 @@ const data = `{
         "nodemailer": {
             "smptNodemailer": "${dados.smptNodemailer}",
             "emailNodemailer": "${dados.emailNodemailer}",
-            "senhaEmailNodemailer": "${dados.senhaEmailNodemailer}"
+            "senhaEmailNodemailer": "${dados.senhaEmailNodemailer}",
+            "urlSite": "${dados.urlSite}"
         }
     },
     "dadosLoja":{
         "nomeLoja": "${dados.nomeLoja}",
         "emailLoja": "${dados.emailLoja}",
         "enderecoLoja": "${dados.enderecoLoja}",
-        "telefoneLoja": "${dados.telefoneLoja}"
+        "telefoneLoja": "${dados.telefoneLoja}",
+        "facebookLoja": "${dados.facebookLoja}",
+        "twitterLoja": "${dados.twitterLoja}",
+        "pinterestLoja": "${dados.pinterestLoja}",
+        "instagramLoja": "${dados.instagramLoja}",
+        "youtubeLoja": "${dados.youtubeLoja}",
+        "msgTopo": "${dados.msgTopo}"
     }
 }`
     

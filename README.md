@@ -6,3 +6,6 @@ Integração com MercadoPago, utilizando o Mongodb e Nodejs
 
 Espero que o projeto em si esteja correto rs e funcione <3
 
+
+
+Configurações do sistema:

@@ -2,14 +2,21 @@
     "configuracaoSistema": {
         "nodemailer": {
             "smptNodemailer": "gmail",
-            "emailNodemailer": "123@mail.com",
-            "senhaEmailNodemailer": "1233"
+            "emailNodemailer": "andrelucas210302@gmail.com",
+            "senhaEmailNodemailer": "andre10123",
+            "urlSite": "213"
         }
     },
     "dadosLoja":{
-        "nomeLoja": "Teste Loja P4",
-        "emailLoja": "lojatestep4@mail.com",
-        "enderecoLoja": "Rua areado 520, Alterosa | 37145-000 MG",
-        "telefoneLoja": "(35) 99988-1600 "
+        "nomeLoja": "Loja Teste P4",
+        "emailLoja": "andrelucas210302@gmail.com",
+        "enderecoLoja": "Rua Areado nº 520, Alterosa - MG | 37145-000",
+        "telefoneLoja": "(35) 9 9988-7766",
+        "facebookLoja": "https://www.facebook.com/ensina.futuro",
+        "twitterLoja": "123",
+        "pinterestLoja": "",
+        "instagramLoja": "opa bao",
+        "youtubeLoja": "",
+        "msgTopo": "20% DE DESCONTO EM QUALQUER COMPRA COM O CÓDIGO: 2021TESTE"
     }
 }

@@ -57,6 +57,9 @@ const Usuario = new Schema({
         type: Boolean,
         default: true
     },
+    emailConfirmado: {
+        type: Boolean,
+    },
     eAdmin: {
         type: Number,
         default: 200

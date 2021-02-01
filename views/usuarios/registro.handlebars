@@ -1,7 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.13.1/dist/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script src="/js/loja-js/registro/registrar.js"></script>
+<script src="/js/loja/registro.js"></script>
 
 
 <!--
@@ -71,7 +71,7 @@
 
 
 
-
+<!--
 
 
 <div class="lg:flex">
@@ -81,7 +81,7 @@
             xl:text-bold uppercase ">{{dadosLoja.nomeLoja}}</h2>
             <p class="text-center text-red-900 font-display font-semibold lg:text-left text-3xl	mt-4">Registrar-se </p>
             <div class="mt-12 mb-20">
-                <form action="/login" method="post" id="form-registrar">
+                <form action="/registrar" method="post" id="form-registrar">
 
                     <div class="flex flex-wrap -mx-2 mt-4 space-y-4 md:space-y-0">
                         <div class="w-full px-2 md:w-1/2">
@@ -143,6 +143,86 @@
     </div>
 </div>
 
+-->
+
+
+
+
+{{>_msg}}
+
+{{>_loja-link}}
+
+{{>_loja-menu}}
+
+<div id="page-content">
+    	<!--Page Title-->
+    	<div class="page section-header text-center">
+			<div class="page-title">
+        		<div class="wrapper"><h1 class="page-width">Create an Account</h1></div>
+      		</div>
+		</div>
+        <!--End Page Title-->
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+                    <div class="mb-4">
+                        <form method="post" action="#" id="form-registrar" accept-charset="UTF-8" class="contact-form">	
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="primeiroNome">Primeiro nome</label>
+                                        <input type="text" name="primeiroNome" placeholder="" id="primeiroNome" autofocus="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="segundoNome">Segundo nome</label>
+                                        <input type="text" name="segundoNome" placeholder="" id="segundoNome">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="cpf">CPF</label>
+                                        <input type="text" name="cpf" placeholder="" id="cpf">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" placeholder="" id="email" class="" autocorrect="off" autocapitalize="off" autofocus="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="senha">Senha</label>
+                                        <input type="password" name="senha" placeholder="" id="senha">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="confirmarSenha">Confirmar senha</label>
+                                        <input type="password" value="" name="confirmarSenha" placeholder="" id="confirmarSenha" class="">                        	
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                                    <input type="submit" class="btn mb-3" value="Cadastrar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+{{>_loja-rodape}}
+
+{{>_loja-js}}
+
 
 
 <script>
@@ -150,14 +230,5 @@
 
     $('#cpf').mask('000.000.000-00')
     
-    function openPopover(event,popoverID){
-      let element = event.target;
-      while(element.nodeName !== "SPAN"){
-        element = element.parentNode;
-      }
-      var popper = new Popper(element, document.getElementById(popoverID), {
-        placement: 'right'
-      });
-      document.getElementById(popoverID).classList.toggle("hidden");
-    }
+    
 </script>

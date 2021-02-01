@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const configJSON = require('../../config/configuracoes-sistema/configuracao.json')
 const configSistema =  configJSON.configuracaoSistema
 
-module.exports.enviarConfirmacaoEmail = async (codigo, emailDestinatario, primeiroNome, segundoNome) => {
+module.exports.enviarConfirmacaoEmail = async (usuario) => {
 let htmlConfirmacao = `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
 
 <head>
@@ -111,6 +111,17 @@ let htmlConfirmacao = `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:s
                 display: block !important;
                 max-height: none !important;
             }
+
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -158,18 +169,20 @@ let htmlConfirmacao = `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:s
                                             <div align="center" class="img-container center autowidth" style="padding-right: 0px;padding-left: 0px;"> <img align="center" alt="I'm an image" border="0" class="center autowidth" src="cid:logo" style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 640px; display: block;" title="I'm an image" width="640" /> </div>
                                             <div style="color:#555555;font-family:Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.2;padding-top:20px;padding-right:40px;padding-bottom:10px;padding-left:40px;">
                                                 <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14px;">
-                                                    <p style="font-size: 46px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 46px; color: #003188;"><strong>Código de Confirmação</strong></span></p>
+                                                    <p style="font-size: 46px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 46px; color: #003188;"><strong>Email de confirmação</strong></span></p>
                                                 </div>
                                             </div>
                                             <div style="color:#555555;font-family:Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.2;padding-top:20px;padding-right:40px;padding-bottom:10px;padding-left:40px;">
                                                 <div style="line-height: 1.2; font-size: 12px; color: #555555; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 14px;">
-                                                    <p style="font-size: 46px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 46px; color: #003188;"><strong>${codigo}</strong></span></p>
+                                                    <p style="font-size: 46px; line-height: 1.2; text-align: center; word-break: break-word; mso-line-height-alt: 55px; margin: 0;"><span style="font-size: 46px; color: #003188;"><strong></strong></span></p>
                                                 </div>
                                             </div>
+
+                                            <a class="button" href="/confirmarEmail/${usuario._id}">Clique aqui para confirmar seu e-mail</a>
                                             
                                             <div style="color:#555555;font-family:Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.5;padding-top:10px;padding-right:40px;padding-bottom:10px;padding-left:40px;">
                                                 <div style="line-height: 1.5; font-size: 12px; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; color: #555555; mso-line-height-alt: 18px;">
-                                                    <p style="text-align: center; line-height: 1.5; word-break: break-word; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 16px; mso-line-height-alt: 24px; margin: 0;"><span style="font-size: 16px; color: #6d89bc;">Olá ${primeiroNome} ${segundoNome}, verificamos que você está se cadastrando em nosso site, seja bem vindo! :)</span></p>
+                                                    <p style="text-align: center; line-height: 1.5; word-break: break-word; font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; font-size: 16px; mso-line-height-alt: 24px; margin: 0;"><span style="font-size: 16px; color: #6d89bc;">Olá, verificamos que você está se cadastrando em nosso site, seja bem vindo! :)</span></p>
                                                 </div>
                                             </div>
                                             <table border="0" cellpadding="0" cellspacing="0" class="divider" role="presentation" style="table-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" valign="top" width="100%">
@@ -254,17 +267,17 @@ let htmlConfirmacao = `<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:s
             user: configSistema.nodemailer.emailNodemailer,
             pass: configSistema.nodemailer.senhaEmailNodemailer
         }
+        
     });
     
     var mailOptions = {
         from: configSistema.nodemailer.emailNodemailer,
-        to: emailDestinatario,
-        subject: 'Código de recuperação Plug Escola',
-        text: codigo,
+        to: usuario.email,
+        subject: 'Código de confirmacao',
         html: htmlConfirmacao,
         attachments: [{ // para a imagem não aparecer como anexo ela deve ser pequena, sendo assim colocar uma con resolução no máximo 1280
             filename: 'logo-email.jpg',
-            path: './public/img/logo-loja/email/logo-email.jpg',
+            path: './public/admin/img/logo/logo-email.jpg',
             cid: 'logo' //same cid value as in the html img src
         }]
     };
